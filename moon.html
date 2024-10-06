@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="moon3.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moon explorer</title>
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      position: relative;
+    }
+
+    #controls {
+      position: absolute;
+      top: 75px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #searchInput {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    #searchInput:focus {
+      border-color: #007bff;
+    }
+
+
+    #searchButton {
+      width: 25%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #searchButton:hover {
+      background-color: #0056b3;
+    }
+
+
+    #searchResults {
+      position: absolute;
+      top: 165px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      max-height: 400px;
+      overflow-y: auto;
+      font-family: Arial, sans-serif;
+    }
+
+    #searchResults img {
+      margin-top: 10px;
+      border-radius: 5px;
+      max-width: 100%;
+    }
+    #container { width: 100vw; height: 100vh; }
+        #control {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            width: 400px;
+            align-items: center;
+    }
+    #option{
+      width: 350;
+    }
+  </style>
+</head>
+<body>
+  <div id="control">
+    <label for="lighting">Choose Moon Lighting:</label>
+    <select id="lighting">
+        <option value="normal">Normal</option>
+        <option value="fully_lit">Fully Lit</option>
+    </select>
+  </div>
+  <div id="container"></div>
+
+  <div id="controls">
+    <input type="text" id="searchInput" placeholder="Search moon terrain...">
+    <button id="searchButton">Search</button>
+  </div>
+  <div id="searchResults"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.rawgit.com/mrdoob/three.js/r82/examples/js/controls/OrbitControls.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
