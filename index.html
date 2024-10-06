@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="moon3.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon explorer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden; /* Prevents scroll bars due to star movement */
+            position: relative; /* Positioning for absolute stars */
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Places stars behind content */
+            overflow: hidden; /* Prevents overflow from moving stars */
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+            .button {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <h1>Welcome to the Moon Explorer!</h1>
+    <p>
+        Our goal is to help people explore the moon and learn about its fascinating terrains and features.
+        This interactive 3D viewer allows you to navigate the lunar surface and discover important lunar landmarks.
+    </p>
+    <p>
+        Click the button below to start your journey and explore the moon like never before!
+    </p>
+    <a href="moon.html" class="button">Explore the Moon</a> <!-- Change the href to the actual filename of your 3D moon page -->
+
+    <script>
+        // Function to create stars
+        function createStars() {
+            const starContainer = document.getElementById('stars');
+            const starCount = 100; // Number of stars to create
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                const size = Math.random() * 3 + 1; // Random size between 1 and 4
+                const xPos = Math.random() * window.innerWidth; // Random horizontal position
+                const yPos = Math.random() * window.innerHeight; // Random vertical position
+
+                star.classList.add('star');
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${yPos}px`;
+                star.style.left = `${xPos}px`;
+                star.style.opacity = Math.random(); // Random opacity for twinkling effect
+                starContainer.appendChild(star);
+            }
+        }
+
+        // Call the function to create stars
+        createStars();
+    </script>
+    
+</body>
+</html>

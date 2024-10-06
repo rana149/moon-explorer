@@ -1,0 +1,85 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the 3D scene */
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Search container styling */
+#search-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    max-width: 90%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 15px;
+    color: #fff;
+    z-index: 999; /* Ensure it's above the 3D scene */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Search bar styling */
+#search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Search input styling */
+#search-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Search button styling */
+#search-button {
+    width: 25%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #1c86ee;
+}
+
+/* Search results styling */
+#search-results {
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#search-results p {
+    margin-bottom: 10px;
+}
+
+#search-results img {
+    width: 100%;
+    border-radius: 5px;
+}
+
